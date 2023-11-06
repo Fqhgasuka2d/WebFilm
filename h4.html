@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-competible" content="IE=EDGE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="c4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">Marvel Studio</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">home</a>
+                <a href="#">about</a>
+                <a href="#">explore</a>
+                <a href="#">gallery</a>
+                <a href="#">contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide active" src="1.mp4"autoplay muted loop></video>
+        <video class="video-slide" src="2.mp4"autoplay muted loop></video>
+        <video class="video-slide" src="3.mp4"autoplay muted loop></video>
+        <video class="video-slide" src="4.mp4"autoplay muted loop></video>
+        <video class="video-slide" src="5.mp4"autoplay muted loop></video>
+        <div class="content active">
+            <h1>THE<br><span>Avengers</span></h1>
+            <p>
+            </p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Avengers<br><span>Age Of Ultron</span></h1>
+            <p>Tony Stark menciptakan Program Ultron untuk melindungi dunia, namun ketika program penjaga perdamaian menjadi bermusuhan, The Avengers bertindak untuk mencoba dan mengalahkan musuh yang hampir mustahil bersama-sama. Pahlawan-pahlawan terkuat di bumi harus bersatu kembali untuk melindungi dunia dari kepunahan global.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Avengers<br><span>Invinity WAr</span></h1>
+            <p>Ada bahaya baru, bukan hanya untuk bumi, tapi seluruh alam semesta. Adalah Thanos, yang mengumpulkan 6 Infinity Stone agar dia bisa membuat dunia seperti yang dia inginkan. Walau Avengers dan sekutu telah bersatu, sulit sekali untuk mengalahkan Thanos.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Avengers<br><span>EndGame</span></h1>
+            <p>Setelah peristiwa dahsyat di Avengers: Infinity War, alam semesta hancur akibat ulah Titan Gila, Thanos. Dengan bantuan sekutu yang tersisa, para Avengers harus berkumpul sekali lagi untuk membatalkan tindakan Thanos dan memperbaiki kekacauan di alam semesta, tidak peduli konsekuensi apa yang mungkin terjadi, dan tidak peduli siapa yang mereka hadapi.</p>
+            <a href="#">Read More</a>
+        </div>
+        </div>
+        <div class="media-icons">
+            <a href="#"><i class=" fab fa-facebook-f"></i></a>
+            <a href="#"><i class=" fab fa-instagram"></i></a>
+            <a href="#"><i class=" fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+ 
+    <script type="text/javascript">
+        //javascript of responsive navigation menu
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () =>{
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+        //javascript for video slider navigation
+        const btns =document.querySelectorAll(".nav-btn ");
+        const slides =document.querySelectorAll(".video-slide ");
+        const contents =document.querySelectorAll(".content ");
+
+        var sliderNav = function(manual){
+
+            btns.forEach((btn) =>{
+                btn.classList.remove("active");
+            })
+            slides.forEach((slide) =>{
+                slide.classList.remove("active");
+            })
+            contents.forEach((content) =>{
+                content.classList.remove("active");
+            })
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i)=>{
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            })
+        })
+    </script>
+   
+</body>
+</html>
